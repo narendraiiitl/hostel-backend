@@ -9,10 +9,11 @@ import dotenv from "dotenv";
 import connectDB from "./config/mongoDBConfig.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 import cors from 'cors';
-app.use(cors());
+
 dotenv.config();
 connectDB();
 const app = express();
+app.use(cors());
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
