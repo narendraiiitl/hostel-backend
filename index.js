@@ -8,6 +8,8 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import connectDB from "./config/mongoDBConfig.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+var cors = require('cors');
+app.use(cors());
 dotenv.config();
 connectDB();
 const app = express();
